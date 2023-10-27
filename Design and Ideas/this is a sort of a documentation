@@ -1,0 +1,55 @@
+Synopsys: It should go in the following manner: Go from Marco to micro: Create a wish list of things that I want the application to do. THen,
+organize the list.  Then create a pseudocode out of the list. Also, that organized list will provide me with the methods, classes, and packages I
+will need
+
+Wish List:
+    Create a grid
+    Create a play again button
+    Every time the 'play again' button is clicked(it only becomes clickable after the the game is done), The grid(the button) is cleared.
+    There are conditions For winning and losing. User Wins if they can get the there 3 Xs in a straight line; straight and diagonal.
+    Computer wins if the 3 Os get in a straight line
+    Its a draw if there is no chance of either getting a straight line anymore
+    lets also put a reset button in case the user wants to restart the game
+
+ Organized List:
+    Create a grid
+    Add a game reset button
+    Computer wins if the 3 Os get in a straight line
+    User wins if the 3 Xs get in a straight line
+    Its a draw if there is no change of either getting a straight line anymore
+    Every time the 'play again' button is clicked(it only becomes clickable after the the game is done), The grid(the button) is cleared.
+    Game is playable until user wins, computer wins, or its a draw
+
+PseudoCode:
+CreateGrid(){ CreateTitle(); CreateResetBtn(); }
+
+while(true){
+    //Game Playing
+    calculate remaining number of clickable buttons
+    If numRemainingUnClickedBtns<=1: { its a draw; whoWon=neither;  }
+    else{
+        User Chooses an unclicked button
+        If( Is there a complete row of 3 Xs? == True): Yes, then whoWon=user;
+        else{
+            Computer choooses an unclicked button
+            if (Is there a complete row of 3 Os? == true): Yes, then whoWon=computer;
+        }
+    }
+
+    //End notification
+    if(whoWon()=="user"){
+        Write above the 'Play again' button: "You Won!"
+        CreatePayAgainButton()
+    }
+    if(whoWon()=="computer"){
+        Write above the 'Play again' button: "Sorry, You Lose!"
+        CreatePayAgainButton()
+    }
+    if(whoWon()=="neither"){
+        Write above the 'Play again' button: "Its a Draw!"
+        CreatePayAgainButton()
+    }
+}
+
+/////////////////////////////////////////////////
+NOTE: A change needs to be made since
